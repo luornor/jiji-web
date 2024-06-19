@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyledHomePage } from './Home.styled'
-import { CatagorieMain, CatagorieSideBar, HomeTipsContainer, MainFooter, SearchContainer, TreandingAds } from '../../components'
+import { CatagorieMain, CatagorieSideBar, HomeTipsContainer, MainFooter, SearchContainer, AllProducts } from '../../components'
 
 export default function Home() {
     return (
@@ -11,7 +11,7 @@ export default function Home() {
                 <CatagorieSideBar />
                 <div>
                     <HomeTipsContainer />
-                    <TreandingAds />
+                    <AllProducts />
                 </div>
             </main>
             <MainFooter />

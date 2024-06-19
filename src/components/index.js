@@ -10,8 +10,10 @@ import NavIcon from "./NavIcon/NavIcon.component"
 import Filter from "./Filter/Filter.component"
 import SearchBox from "./SearchBox/SearchBox.component"
 import SearchContainer from "./SearchContainer/SearchContainer.component"
-import TreandingAd from "./TreandingAd/TreandingAd.component"
-import TreandingAds from "./TreandingAds/TreandingAds.component"
+import ProductCard from "./ProductCard/ProductCard.component"
+import AllProducts from "./AllProducts/AllProducts.component"
+import ProductDetails from "./ProductDetails/ProductDetails.component"
+import Cart from "./Cart/Cart.component"
 export {  
 CatagorieMain, 
 CatagorieSideBar, 
@@ -23,6 +25,8 @@ NavIcon,
 Filter, 
 SearchBox, 
 SearchContainer, 
-TreandingAd, 
-TreandingAds, 
+ProductCard, 
+AllProducts, 
+ProductDetails,
+Cart
 } 

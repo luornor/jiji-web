@@ -8,12 +8,18 @@ export default function Filter({ categories, regions, onFilterChange }) {
     const [maxPrice, setMaxPrice] = useState('');
 
     const handleApplyFilters = () => {
-        onFilterChange({ category, region, minPrice, maxPrice });
+        // Convert minPrice and maxPrice to numbers
+        const filters = {
+            category,
+            region,
+            minPrice: minPrice ? parseFloat(minPrice) : '',
+            maxPrice: maxPrice ? parseFloat(maxPrice) : ''
+        };
+        onFilterChange(filters);
     };
 
     return (
         <StyledFilter>
-            <div>
             <select value={category} onChange={(e) => setCategory(e.target.value)}>
                 <option value="">Select Category</option>
                 {categories.map((cat) => (
@@ -39,7 +45,6 @@ export default function Filter({ categories, regions, onFilterChange }) {
                 onChange={(e) => setMaxPrice(e.target.value)}
             />
             <button onClick={handleApplyFilters}>Apply Filters</button>
-            </div>
         </StyledFilter>
     );
 }

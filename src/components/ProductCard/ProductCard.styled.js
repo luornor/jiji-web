@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Themes from "../../style/Theme";
-export const StyledTreandingAd = styled.div`
+export const StyledProductCard = styled.div`
     background:${Themes.white};
     padding-bottom:100%;
     border-radius:5px;

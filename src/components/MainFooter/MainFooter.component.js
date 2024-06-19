@@ -5,7 +5,7 @@ import AppStoreIcon from "../../assets/ios.svg"
 export default function MainFooter() {
 return (
  <StyledMainFooter> 
-     <img src={FooterEthiopia} />
+     <img src={FooterEthiopia} alt='Ethiopia' />
      <div className='footer-info-container'>
         <div>
            <span>About us</span>

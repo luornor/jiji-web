@@ -4,6 +4,7 @@ import { Header } from "./components";
 import Global from "./style/Globals";
 import  Home from "./pages/Home/Home.page.js";
 import NotFound from './pages/NotFound/NotFound.page.js';
+import ProductPage from './pages/ProductPage/ProductPage.page.js';
 
 import {
   BrowserRouter,
@@ -21,6 +22,7 @@ function App() {
           <Routes> 
            <Route path="/" element={<Home />} />
            <Route path="*" element={<NotFound />} />
+           <Route path="/product/:id" element={<ProductPage/>} />
           </Routes>
        </BrowserRouter>
     </ThemeProvider>

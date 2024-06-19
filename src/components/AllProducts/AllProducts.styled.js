@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Themes from "../../style/Theme";
-export const StyledTreandingAds = styled.div`
+export const StyledAllProducts = styled.div`
     display:flex;
     flex-direction: column;
     width:100%;
