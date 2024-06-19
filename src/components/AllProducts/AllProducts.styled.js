@@ -10,7 +10,7 @@ export const StyledAllProducts = styled.div`
         padding:5px;
         color:${Themes.fadeBlack}
     }
-    .treanding-ads-cont{
+    .trending-ads-cont{
        display:grid;
        grid-template-columns:repeat(4,1fr);
        flex:1;
