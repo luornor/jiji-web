@@ -1,70 +1,165 @@
-# Getting Started with Create React App
+# E-Commerce Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a full-stack e-commerce web application built using React for the frontend and Django for the backend. The application allows users to view products, add products to a shopping cart, edit the quantity of products in the cart, and remove products from the cart.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Display products from the database
+- View detailed information about a product
+- Add products to the shopping cart
+- Edit the quantity of products in the cart
+- Remove products from the cart
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+### Frontend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React
+- Axios (for API calls)
+- Styled Components (for styling)
 
-### `npm run build`
+### Backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Django
+- Django REST Framework
+- PostgreSQL (or any other database supported by Django)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+- Node.js
+- npm (or yarn)
+- Python 3.x
+- pip
+- PostgreSQL (or any other database supported by Django)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Backend Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    ```sh
+    git clone https://github.com/luornor/ecomerce.git
+    cd ecomerce
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Create a virtual environment and activate it:
 
-## Learn More
+    ```sh
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Install the dependencies:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    ```sh
+    pip install -r requirements.txt
+    ```
 
-### Code Splitting
+4. Configure the database in `settings.py`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+5. Apply migrations:
 
-### Analyzing the Bundle Size
+    ```sh
+    python manage.py migrate
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+6. Run the development server:
 
-### Making a Progressive Web App
+    ```sh
+    python manage.py runserver
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Frontend Setup
 
-### Advanced Configuration
+1. Clone the repository:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    ```sh
+    git clone https://github.com/luornor/jiji-web.git
+    cd jiji-web
+    ```
 
-### Deployment
+2. Install the dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    ```sh
+    npm install
+    # or
+    yarn install
+    ```
 
-### `npm run build` fails to minify
+3. Create a `.env` file and add your backend API URL:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    ```env
+    REACT_APP_API_URL=http://127.0.0.1:8000
+    ```
+
+4. Start the development server:
+
+    ```sh
+    npm start
+    # or
+    yarn start
+    ```
+
+## Usage
+
+1. Navigate to the frontend URL (usually `http://localhost:3000`).
+2. Browse the products listed on the homepage.
+3. Click on a product to view its details.
+4. Add the product to the cart.
+5. Navigate to the cart to view, edit, or remove items.
+
+## API Endpoints
+
+### Products
+
+- `GET /products/` - List all products
+- `GET /products/:id/` - Retrieve a specific product
+
+### Cart
+
+- `GET /cart/` - Retrieve the cart items
+- `POST /cart/` - Add an item to the cart
+- `PUT /cart/:id/` - Update the quantity of a cart item
+- `DELETE /cart/:id/` - Remove an item from the cart
+
+## Screenshots
+
+![Homepage](screenshots/homepage.png)
+*Screenshot of the homepage listing products.*
+
+![Product Details](screenshots/product-details.png)
+*Screenshot of the product details page.*
+
+![Shopping Cart](screenshots/cart.png)
+*Screenshot of the shopping cart.*
+
+## Contributing
+
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+Luornor Nathan Tettey - [tetteynathan89@gmail.com](mailto:tetteynathan89@gmail.com)
+
+Project Link: [https://github.com/luornor/jiji-web.git](https://github.com/luornor/jiji-web.git)
