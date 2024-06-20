@@ -23,13 +23,13 @@ export default function Filter({ categories, regions, onFilterChange }) {
             <select value={category} onChange={(e) => setCategory(e.target.value)}>
                 <option value="">Select Category</option>
                 {categories.map((cat) => (
-                    <option key={cat.id} value={cat.name}>{cat.name}</option>
+                    <option key={cat.id} value={cat.id}>{cat.name}</option>
                 ))}
             </select>
             <select value={region} onChange={(e) => setRegion(e.target.value)}>
                 <option value="">Select Region</option>
                 {regions.map((reg) => (
-                    <option key={reg.id} value={reg.name}>{reg.name}</option>
+                    <option key={reg.id} value={reg.id}>{reg.name}</option>
                 ))}
             </select>
             <input

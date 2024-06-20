@@ -1,7 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
-import { StyledProductDetails, ProductImage, AddToCartButton, ProductDetailsContainer } from './ProductDetails.styled';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import {
+  StyledProductDetails,
+  ProductImage,
+  AddToCartButton,
+  ProductDetailsContainer,
+  ProductName,
+  ProductPrice,
+  ProductDescription,
+  ProductMeta,
+} from "./ProductDetails.styled";
 
 const baseUrl = process.env.REACT_APP_API_URL;
 
@@ -45,11 +54,15 @@ function ProductDetails({ onAddToCart }) {
   return (
     <ProductDetailsContainer>
       <StyledProductDetails>
-        <h1>{product.name}</h1>
+        <ProductName>{product.name}</ProductName>
         <ProductImage src={product.image_url} alt={product.name} />
-        <p>Price: GHC {product.price}</p>
-        <p>{product.description}</p>
-        <AddToCartButton onClick={handleAddToCartClick}>Add to Cart</AddToCartButton>
+        <ProductPrice>Price: GHC {product.price}</ProductPrice>
+        <ProductDescription>{product.description}</ProductDescription>
+        <ProductMeta>Category: {product.category.name}</ProductMeta>
+        <ProductMeta>Region: {product.region.name}</ProductMeta>
+        <AddToCartButton onClick={handleAddToCartClick}>
+          Add to Cart
+        </AddToCartButton>
       </StyledProductDetails>
     </ProductDetailsContainer>
   );
