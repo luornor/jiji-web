@@ -53,8 +53,17 @@ function ProductPage() {
   };
 
   const handleUpdateCartQuantity = (itemId, newQuantity) => {
-    console.log(`Updating item ${itemId} quantity to ${quantity}`); // Debug log
-    axios.put(`${baseUrl}/cart/${itemId}/`, {quantity : newQuantity })
+    const cartItem = cart.find(item => item.id === itemId);
+    if (!cartItem) {
+      console.error(`Item with id ${itemId} not found in cart.`);
+      return;
+    } // Debug log
+
+    const payload = {
+      product: cartItem.product,
+      quantity: newQuantity
+    };
+    axios.put(`${baseUrl}/cart/${itemId}/`, payload)
       .then(response => {
         console.log('Cart quantity updated!');
         fetchCart();
